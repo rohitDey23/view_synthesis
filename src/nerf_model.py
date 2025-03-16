@@ -8,7 +8,7 @@ import argparse
 
 
 @torch.no_grad()
-def test(hn, hf, dataset, chunk_size=10, img_index=0, nb_bins=192, H=400, W=400):
+def test(hn, hf, dataset, chunk_size=10, img_index=0, nb_bins=192, H=400, W=400, output_model_path="models"):
     """
     Args:
         hn: near plane distance
@@ -43,7 +43,7 @@ def test(hn, hf, dataset, chunk_size=10, img_index=0, nb_bins=192, H=400, W=400)
 
     plt.figure()
     plt.imshow(img)
-    plt.savefig(f"models/generated_views/img_{img_index}.png", bbox_inches="tight")
+    plt.savefig(f"{output_model_path}/generated_views/img_{img_index}.png", bbox_inches="tight")
     plt.close()
 
 
@@ -181,6 +181,7 @@ def train(
     nb_bins=192,
     H=400,
     W=400,
+    output_model_path="models",
 ):
     training_loss = []
     for _ in tqdm(range(nb_epochs)):
@@ -202,7 +203,7 @@ def train(
 
         for img_index in range(200):
             test(
-                hn, hf, testing_dataset, img_index=img_index, nb_bins=nb_bins, H=H, W=W
+                hn, hf, testing_dataset, img_index=img_index, nb_bins=nb_bins, H=H, W=W, output_model_path=output_model_path
             )
     return training_loss
 
@@ -212,12 +213,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train a NeRF model.")
     parser.add_argument("--train_pkl", type=str, required=True, help="Path to the training dataset in pickle format.")
     parser.add_argument("--test_pkl", type=str, required=True, help="Path to the testing dataset in pickle format..")
-    parser.add_argument("--output_model", type=str, required=True, help="Path to save the trained model in pt.")
+    parser.add_argument("--output_path", type=str, required=True, help="Path to save the trained model")
     args = parser.parse_args()
     
     train_dataset_path = args.train_pkl
     test_dataset_path = args.test_pkl
-    output_model_path = args.output_model
+    output_model_path = args.output_path
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
@@ -246,7 +247,8 @@ if __name__ == "__main__":
         nb_bins=192,
         H=400,
         W=400,
+        output_model_path=output_model_path,
     )
 
-    torch.save(model.state_dict(), output_model_path)
+    torch.save(model.state_dict(), f"{output_model_path}/nerf_model.pt")
     print("Model saved successfully")
