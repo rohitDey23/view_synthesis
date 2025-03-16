@@ -1,5 +1,8 @@
 # View-Synthesis 3D Gaussian Splatting (3DGS)
 This repository provides an implementation of various view synthesis techniques including NeRF, 3D Gaussian Splatting (3DGS), and MipNeRF. The goal is to make it as easy as possible to get the code running. To achieve this, a Dockerfiles are provided to build a Docker image, which simplifies the setup process. Follow the steps below to successfully run 3DGS and other view synthesis techniques.
+
+![Comparison](result/gt_rend_comparison.gif)
+
 ### Git Clone the repo
 ```sh
 git clone https://github.com/rohitDey23/view_synthesis.git
