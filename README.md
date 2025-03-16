@@ -7,7 +7,7 @@ This repository provides an implementation of various view synthesis techniques 
 ```sh
 git clone https://github.com/rohitDey23/view_synthesis.git
 cd view_synthesis
-git checkout tags/gaussian_splatting
+git checkout gaussian_splatting
 ```
 
 ### Build Docker Image for Gaussian Splatting (3DGS)
