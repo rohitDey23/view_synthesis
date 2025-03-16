@@ -100,11 +100,7 @@ Link for installation: [SIBR Viewers Installation](https://sibr.gitlabpages.inri
 
 You can extract the model data pointcloud and use SIBR viewer to run around the scene. Takes a little time to get used to the controls 😊
 
-<video width="600" controls>
-  <source src="result/real_time_rendering.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
+[Watch the video!!](result/real_time_rendering.mp4)
 
 
 
