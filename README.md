@@ -103,7 +103,7 @@ Link for installation: [SIBR Viewers Installation](https://sibr.gitlabpages.inri
 
 You can extract the model data pointcloud and use SIBR viewer to run around the scene. Takes a little time to get used to the controls 😊
 
-[Watch the video!!](result/real_time_rendering.mp4)
+[Watch the video!!](https://github.com/rohitDey23/view_synthesis/blob/gaussian_splatting/result/real_time_rendering.mp4)
 
 ### References
 This repo refers to the following github repository [3D guassian-splatting](https://github.com/graphdeco-inria/gaussian-splatting) by Bernhard Kerbl et al. Check it out for latest issues and updates.
