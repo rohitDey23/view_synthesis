@@ -1,0 +1,3 @@
+data/
+models/generated_views/*
+!data/.info
