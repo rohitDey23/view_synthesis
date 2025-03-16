@@ -47,7 +47,7 @@ The training loop is designed to save 200 images rendered by the model at the en
 
 Here are the results of training the netwrok for 12 Epochs (12 hrs 😫)
 
-![Output-GIF](https://github.com/rohitDey23/view_synthesis/blob/nerf/result/output.gif)
+![Output-GIF](https://github.com/rohitDey23/view_synthesis/blob/nerf/result/output12.gif)
  
 ### Additional Information
 If the code failed to run, there can be a problem with the setup of the environment. To verify everything is setup correctly run the following scripts to check is all the required libaries are installed working properly.
