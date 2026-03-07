@@ -37,6 +37,7 @@ If data is not downloaded, download the data into the data folder (Should follow
 ```sh
 cd data
 wget https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/datasets/input/tandt_db.zip
+unzip tandt_db.zip
 rm tandt_db.zip
 ```
 ### Install the submodules:
