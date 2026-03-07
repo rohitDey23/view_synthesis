@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y \
     libyaml-cpp-dev \
     python3-dev \
     python3-pip\
-    nano \ 
+    nano \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
@@ -38,7 +38,9 @@ RUN  apt-get update && \
 
 SHELL ["/bin/bash", "--login", "-c"]
 
-RUN conda create -n "view_synthesis" python=3.10.12 -y && \
+RUN conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main && \
+    conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r && \
+    conda create -n "view_synthesis" python=3.10.12 -y && \
     conda activate view_synthesis && \
     conda install nvidia/label/cuda-12.6.1::cuda -y && \
     pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126 && \
